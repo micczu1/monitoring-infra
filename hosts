@@ -1,0 +1,11 @@
+[prometheus]
+demo
+
+[grafana]
+demo
+
+[web]
+demo
+
+#[influxdb]
+#influx

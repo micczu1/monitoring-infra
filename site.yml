@@ -1,0 +1,31 @@
+- name: Deploy node_exporter
+  hosts: all
+  roles:
+    - cloudalchemy.node-exporter
+  tags:
+    - node_exporter
+
+- name: Setup core monitoring software
+#  hosts: all
+  hosts: prometheus
+  roles:
+    - cloudalchemy.blackbox-exporter
+#    - cloudalchemy.snmp-exporter
+    - name: cloudalchemy.mysqld_exporter
+      become: true
+    - name: process-exporter
+      become: true
+#    - name: bash-exporter
+#      become: true
+    - cloudalchemy.prometheus
+    - cloudalchemy.alertmanager
+  tags:
+    - prometheus
+
+- name: Deploy grafana
+  hosts: all
+#  hosts: grafana
+  roles:
+    - cloudalchemy.grafana
+  tags:
+    - grafana

@@ -1,0 +1,33 @@
+---
+# defaults
+# mysqld_exporter_version: 0.11.0
+# mysqld_exporter_web_listen_address: "0.0.0.0:9104"
+
+# mysqld_exporter_dsn: "exporter:password@(localhost:3306)/"
+mysqld_exporter_dsn: "exporter:exporter@(localhost:3306)/"
+
+# mysqld_exporter_my_cnf: ""
+#mysqld_exporter_my_cnf: "/etc/.mysqld_exporter.cnf"
+
+mysqld_exporter_collect:
+  - global_status
+  - info_schema.innodb_metrics
+  - auto_increment.columns
+  - info_schema.processlist
+  - binlog_size
+  - info_schema.tablestats
+  - global_variables
+  - info_schema.query_response_time
+  - info_schema.tables
+  - perf_schema.tablelocks
+  - perf_schema.file_events
+  - perf_schema.eventswaits
+  - perf_schema.indexiowaits
+  - perf_schema.tableiowaits
+  - info_schema.clientstats # poczatek dodanych
+  - info_schema.userstats
+  - engine_innodb_status
+#  - info_schema.innodb_tablespaces
+#  - slave_status
+
+mysqld_exporter_no_collect: []
