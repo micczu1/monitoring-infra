@@ -4,8 +4,8 @@ demo
 [grafana]
 demo
 
-[web]
-demo
+#[web]
+#demo
 
 #[influxdb]
 #influx
