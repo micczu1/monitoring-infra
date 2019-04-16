@@ -9,9 +9,9 @@ https://github.com/cloudalchemy/demo-site
 ## Important notice
 
 This repository consists of two playbooks:
+
   - [site.yml](site.yml) - which deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports
   - [extras.yml](extras.yml) - adds influxdb as a long-term storage and deploys caddy http proxy. This will allow HTTPS connections to services like prometheus
-
 
 ## Run yourself
 
