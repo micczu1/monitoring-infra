@@ -48,7 +48,7 @@ ansible-galaxy install -r roles/requirements.yml
 cd roles
 git clone https://github.com/micczu1/process-exporter.git
 git clone https://github.com/micczu1/bash-exporter.git
-git clone https://github.com/micczu1/sql_exporter.git
+git clone https://github.com/micczu1/sql_exporter1.git
 cd ..
 
 # Run playbook
