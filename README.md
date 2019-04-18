@@ -2,9 +2,7 @@
 
 ## Important notice
 
-This repository consists of two playbooks:
-
-  - [site.yml](site.yml) - which deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports
+Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports.
 
 ## Run yourself
 
