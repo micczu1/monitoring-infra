@@ -1,9 +1,3 @@
-**WIP (as curent workstate save)**
-
-Heavily inspired (mostly forked from) by:
-https://github.com/cloudalchemy/demo-site
-
-
 # Monitoring infra
 
 ## Important notice
@@ -11,7 +5,6 @@ https://github.com/cloudalchemy/demo-site
 This repository consists of two playbooks:
 
   - [site.yml](site.yml) - which deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports
-  - [extras.yml](extras.yml) - adds influxdb as a long-term storage and deploys caddy http proxy. This will allow HTTPS connections to services like prometheus
 
 ## Run yourself
 
@@ -56,3 +49,22 @@ ansible-playbook site.yml
 # or when using vault encrypted variables
 ansible-playbook --vault-id @prompt site.yml
 ```
+#### Test with Vagrant
+
+```bash
+# To start or reprovision after changes
+vagrant up --provision
+
+# To login to test virtual machine
+vagrant ssh
+
+# To remove test machine
+vagrant destroy
+```
+
+## License
+
+This project is licensed under Apache2 License. See [LICENSE](/LICENSE) for more details.
+
+Inspired by:
+https://github.com/cloudalchemy/demo-site
