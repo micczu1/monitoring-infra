@@ -12,8 +12,9 @@
     - cloudalchemy.blackbox-exporter
     - cloudalchemy.snmp-exporter
     - name: cloudalchemy.mysqld_exporter
-    - name: process-exporter
-    - name: bash-exporter
+      become: true
+    - process-exporter
+    - bash-exporter
     - cloudalchemy.prometheus
     - cloudalchemy.alertmanager
     - sql_exporter1
