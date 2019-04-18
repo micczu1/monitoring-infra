@@ -7,8 +7,7 @@ Vagrant.configure("2") do |config|
   boxes = [
 #    { :name => "ubuntu-hello-world-box", :box => "kbi/ubuntu16.04" },
 #    { :name => "centos-hello-world-box", :box => "kbi/centos7" },
-#    { :name => "centos-hello-world-box2", :box => "centos7-ansible" },
-    { :name => "centos7-ansible", :box => "centos7-ansible" }
+    { :name => "centos7-ansible", :box => "micczu/centos7-ansible" }
   ]
   boxes.each do |opts|
     config.vm.define opts[:name] do |config|
