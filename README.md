@@ -14,7 +14,7 @@ Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without add
 | `bash-exporter` | custom Ansible role | role to install bash-exporter on host; it allows exporting contents of text files, which can be written i.e. by scripts; currently unused as node_exporter has textfile exporting capability |
 | `cloudalchemy.prometheus` | Ansible Galaxy | role to install Prometheus application on Prometheus host |
 | `cloudalchemy.alertmanager` | Ansible Galaxy | role to install Alertmanager application on Prometheus host; alerting app for Prometheus |
-| `sql_exporter1` | custom Ansible role | role to install sql_exporter by free on host; exports results of defined custom SQL queries; seems to address our needs better than sql_exporter by justwath|
+| `sql_exporter1` | custom Ansible role | role to install sql_exporter by free on host; exports results of defined custom SQL queries; seems to address our needs better than sql_exporter by justwathcom|
 | `cloudalchemy.grafana` | Ansible Galaxy | role to install Grafana application on Grafana host (which could be the same as Prometheus host) |
 
 ## Run by yourself
