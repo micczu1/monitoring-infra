@@ -82,8 +82,8 @@ https://github.com/cloudalchemy/demo-site
 
 ## ToDo
 
-[ ] Put passwords in Ansible Vault
-[ ] Secure exporters (TLS encryption + simple auth)
-[ ] Sort out the _"missing jmespath on deployer"_ problem (it appears in Prometheus and Grafana roles; workaround is to comment out few minor auto-configuration tasks)
-[ ] Better auto-configuration of Prometheus
-[ ] Better auto-configuration of Grafana
+- [ ] Put passwords in Ansible Vault
+- [ ] Secure exporters (TLS encryption + simple auth)
+- [ ] Sort out the _"missing jmespath on deployer"_ problem (it appears in Prometheus and Grafana roles; workaround is to comment out few minor auto-configuration tasks)
+- [ ] Better auto-configuration of Prometheus
+- [ ] Better auto-configuration of Grafana
