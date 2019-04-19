@@ -15,7 +15,8 @@ Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without add
 | `cloudalchemy.prometheus` | Ansible Galaxy | role to install Prometheus application on Prometheus host |
 | `cloudalchemy.alertmanager` | Ansible Galaxy | role to install Alertmanager application on Prometheus host; alerting app for Prometheus |
 | `sql_exporter1` | custom Ansible role | role to install sql_exporter by free on host; exports results of defined custom SQL queries; seems to address our needs better than sql_exporter by justwathcom|
-| `cloudalchemy.grafana` | Ansible Galaxy | role to install Grafana application on Grafana host (which could be the same as Prometheus host) |
+| `cloudalchemy.grafana`| Ansible Galaxy | role to install Grafana application on Grafana host (which could be the same as Prometheus host) |
+| `stunnel` | custom Ansible role | role to install stunnel on node; simple TLS proxy used for secure communication between Prometheus and his exporters |
 
 ## Run by yourself
 
@@ -50,6 +51,7 @@ You need to specify both even if you don't use grafana nor influxdb. You can loo
 ansible-galaxy install -r roles/requirements.yml
 
 cd roles
+git clone https://github.com/micczu1/stunnel.git
 git clone https://github.com/micczu1/process-exporter.git
 git clone https://github.com/micczu1/bash-exporter.git
 git clone https://github.com/micczu1/sql_exporter1.git
