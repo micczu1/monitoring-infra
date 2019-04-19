@@ -19,7 +19,7 @@ Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without add
 | `sql_exporter1` | custom Ansible role | role to install sql_exporter by free on host; exports results of defined custom SQL queries; seems to address our needs better than sql_exporter by justwath|
 | `cloudalchemy.grafana` | Ansible Galaxy | role to install Grafana application on Grafana host (which could be the same as Prometheus host) |
 
-## Run yourself
+## Run by yourself
 
 You can easily run such setup yourself without much knowledge how any part of this works. You just need to do two things:
 
