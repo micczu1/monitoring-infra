@@ -4,6 +4,21 @@
 
 Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports.
 
+## What is what
+
+| name | source | notes |
+| -------------- | ------------- | -----------------------------------|
+| `cloudalchemy.node-exporter` | Ansible Galaxy | role to install node_exporter on host; exports OS and hardware metrics |
+| `cloudalchemy.blackbox-exporter` | Ansible Galaxy | role to install blackbox-exporter on Prometheus host; it's for checking services remotely |
+| `cloudalchemy.snmp-exporter` | Ansible Galaxy | role to install snmp-exporter on Prometheus host; it's for checking devices remotely via SNMP; currently has some problem with installing |
+| `cloudalchemy.mysqld_exporter` | Ansible Galaxy | role to install mysqld_exporter on hosts with MySQL databases; it exports databases metrics |
+| `process-exporter` | custom Ansible role | role to install process-exporter on host; exports running processes metrics |
+| `bash-exporter` | custom Ansible role | role to install bash-exporter on host; it allows exporting contents of text files, which can be written i.e. by scripts; currently unused as node_exporter has textfile exporting capability |
+| `cloudalchemy.prometheus` | Ansible Galaxy | role to install Prometheus application on Prometheus host |
+| `cloudalchemy.alertmanager` | Ansible Galaxy | role to install Alertmanager application on Prometheus host; alerting app for Prometheus |
+| `sql_exporter1` | custom Ansible role | role to install sql_exporter by free on host; exports results of defined custom SQL queries; seems to address our needs better than sql_exporter by justwath|
+| `cloudalchemy.grafana` | | Ansible Galaxy | role to install Grafana application on Grafana host (which could be the same as Prometheus host) |
+
 ## Run yourself
 
 You can easily run such setup yourself without much knowledge how any part of this works. You just need to do two things:
@@ -17,7 +32,7 @@ First of all you need to configure your inventory, ours is located in [`hosts`](
 demo
 ```
 
-Accordingly you can exclude grafana, prometheus, or influxdb.
+Accordingly, you can exclude grafana, prometheus, or influxdb.
 
 #### Change passwords
 

@@ -14,7 +14,7 @@
     - name: cloudalchemy.mysqld_exporter
       become: true
     - process-exporter
-    - bash-exporter
+#    - bash-exporter
     - cloudalchemy.prometheus
     - cloudalchemy.alertmanager
     - sql_exporter1
