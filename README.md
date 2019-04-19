@@ -1,7 +1,5 @@
 # Monitoring infra
 
-## Important notice
-
 Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports.
 
 ## What is what
