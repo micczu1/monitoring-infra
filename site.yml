@@ -10,7 +10,7 @@
   #  hosts: prometheus
   roles:
     - cloudalchemy.blackbox-exporter
-    - cloudalchemy.snmp-exporter
+#    - cloudalchemy.snmp-exporter
     - name: cloudalchemy.mysqld_exporter
       become: true
     - process-exporter
