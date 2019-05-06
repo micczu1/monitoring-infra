@@ -75,11 +75,9 @@ vagrant ssh
 vagrant destroy
 ```
 
-## License
+## Credits
 
-This project is licensed under Apache2 License. See [LICENSE](/LICENSE) for more details.
-
-Inspired by:
+This project is inspired by:
 https://github.com/cloudalchemy/demo-site
 
 ## ToDo
