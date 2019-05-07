@@ -79,13 +79,13 @@ vagrant destroy
 
 ## Credits
 
-This project is inspired by:
+This project is greatly inspired by:
 https://github.com/cloudalchemy/demo-site
 
 ## ToDo
 
-- [ ] Put passwords/generated certificates and keys in Ansible Vault
-- [ ] Secure exporters (TLS encryption + simple auth)
-- [ ] Sort out the _"missing jmespath on deployer"_ problem (it appears in Prometheus and Grafana roles; workaround is to comment out few minor auto-configuration tasks)
+- [ ] (optional) Put passwords/generated certificates and keys in Ansible Vault
+- [ ] (optional) Secure exporters (TLS encryption + simple auth)
+- [ ] Sort out the _"missing jmespath on deployer"_ problem (it appears in Prometheus and Grafana roles; workaround is to comment out few minor auto-configuration tasks) - chance it disappears when running live, instead on Vagrant
 - [ ] Better auto-configuration of Prometheus
 - [ ] Better auto-configuration of Grafana
