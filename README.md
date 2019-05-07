@@ -12,6 +12,7 @@ Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without add
 | `cloudalchemy.mysqld_exporter` | Ansible Galaxy | role to install mysqld_exporter on hosts with MySQL databases; it exports databases metrics |
 | `process-exporter` | custom Ansible role | role to install process-exporter on host; exports running processes metrics |
 | `bash-exporter` | custom Ansible role | role to install bash-exporter on host; it allows exporting contents of text files, which can be written i.e. by scripts; currently unused as node_exporter has textfile exporting capability |
+| `conntrack_exporter` | custom Ansible role | role to install conntrack_exporter on host; it allows exporting information about network connections on host |
 | `cloudalchemy.prometheus` | Ansible Galaxy | role to install Prometheus application on Prometheus host |
 | `cloudalchemy.alertmanager` | Ansible Galaxy | role to install Alertmanager application on Prometheus host; alerting app for Prometheus |
 | `sql_exporter1` | custom Ansible role | role to install sql_exporter by free on host; exports results of defined custom SQL queries; seems to address our needs better than sql_exporter by justwathcom|
@@ -55,6 +56,7 @@ git clone https://github.com/micczu1/stunnel.git
 git clone https://github.com/micczu1/process-exporter.git
 git clone https://github.com/micczu1/bash-exporter.git
 git clone https://github.com/micczu1/sql_exporter1.git
+git clone https://github.com/micczu1/conntrack_exporter.git
 cd ..
 
 # Run playbook
