@@ -18,6 +18,8 @@
     - cloudalchemy.prometheus
     - cloudalchemy.alertmanager
     - sql_exporter1
+#    - name: conntrack_exporter
+#      become: true
   tags:
     - prometheus
 
