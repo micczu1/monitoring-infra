@@ -1,32 +1,56 @@
-#- name: Deploy node_exporter
-#  hosts: all
-#  roles:
-#    - cloudalchemy.node-exporter
-#  tags:
-#    - node_exporter
+- name: Deploy node_exporter
+  hosts: all
+  roles:
+    - cloudalchemy.node-exporter
+  tags:
+    - node_exporter
+
+- name: Deploy process-exporter
+  hosts: all
+  roles:
+    - micczu1.ansible_process_exporter
+  tags:
+    - process_exporter
+
+- name: Deploy mysqld_exporter
+  hosts: mysql
+  become: true
+  roles:
+    - cloudalchemy.mysqld_exporter
+  tags:
+    - mysqld_exporter
+
+- name: Deploy sql_exporter
+  hosts: sql
+  become: true
+  roles:
+    - micczu1.ansible_sql_exporter
+  tags:
+    - sql_exporter
+
+- name: Deploy conntrack_exporter
+  hosts: conntrack
+  become: true
+  roles:
+    - micczu1.ansible_conntrack_exporter
+  tags:
+    - conntrack_exporter
+
 
 - name: Setup core monitoring software
-  hosts: all
-  #  hosts: prometheus
+  hosts: prometheus
   roles:
 #    - cloudalchemy.blackbox-exporter
 #    - cloudalchemy.snmp-exporter
-#    - name: cloudalchemy.mysqld_exporter
-#      become: true
-#    - micczu1.ansible_process_exporter
 #    - bash-exporter
     - cloudalchemy.prometheus
-#    - cloudalchemy.alertmanager
-#    - sql_exporter1
-#    - name: conntrack_exporter
-#      become: true
-#  tags:
-#    - prometheus
+    - cloudalchemy.alertmanager
+  tags:
+    - prometheus
 
-#- name: Deploy grafana
-#  hosts: all
-#  #  hosts: grafana
-#  roles:
-#    - cloudalchemy.grafana
-#  tags:
-#    - grafana
+- name: Deploy grafana
+  hosts: grafana
+  roles:
+    - cloudalchemy.grafana
+  tags:
+    - grafana

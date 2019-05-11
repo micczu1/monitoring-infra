@@ -7,3 +7,4 @@
 - name: cloudalchemy.mysqld_exporter
 - name: micczu1.ansible_process_exporter
 - name: micczu1.ansible_sql_exporter
+- name: micczu1.ansible_conntrack_exporter

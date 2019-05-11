@@ -1,1 +1,14 @@
+[prometheus]
 localhost
+
+[grafana]
+localhost
+
+[mysql]
+localhost
+
+[sql]
+localhost
+
+[conntrack]
+
