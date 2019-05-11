@@ -4,3 +4,6 @@
 - name: cloudalchemy.prometheus
 - name: cloudalchemy.alertmanager
 - name: cloudalchemy.grafana
+- name: cloudalchemy.mysqld_exporter
+- name: micczu1.ansible_process_exporter
+- name: micczu1.ansible_sql_exporter

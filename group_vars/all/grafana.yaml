@@ -38,19 +38,12 @@
 #   static_root_path: public
 #   router_logging: false
 
-
-
-
-
-
-
-
 # Variables correspond to ones in grafana.ini configuration file
 # Security
 grafana_security:
   admin_user: admin
-#  admin_password: ""
-  admin_password: "{{ vault_grafana_password }}"
+  admin_password: "Kubek"
+#  admin_password: "{{ vault_grafana_password }}"
 #  secret_key: ""
 #  login_remember_days: 7
 #  cookie_username: grafana_user
@@ -73,10 +66,11 @@ grafana_security:
 #  log_queries: ""
 grafana_database:
   type: mysql
-  host: mariadb01.contrail.juniper.net:3306
+  host: 127.0.0.1:3306
   name: grafana
   user: grafana
-  password: ""
+#  password: "{{ vault_grafana_db_password }}"
+  password: grafana
 #  url: ""
 #  ssl_mode: disable
 #  path: grafana.db
@@ -164,8 +158,8 @@ grafana_auth:
 # Set this for mail notifications
 # grafana_smtp: {}
 #  host:
-#  user:
-#  password:
+#  user: grafana
+#  password: "{{ vault_grafana_smtp_password }}"
 #  from_address:
 
 # Enable grafana alerting mechanism
@@ -228,18 +222,19 @@ grafana_dashboards:
   - dashboard_id: '405' # Node Exporter Server Metrics by Knut Ytterhaug
     revision_id: '8'
     datasource: '{{ grafana_datasources.0.name }}'
-  - dashboard_id: '1860' # Node Exporter Full by idealista
-    revision_id: '13'
-    datasource: '{{ grafana_datasources.0.name }}'
+#  - dashboard_id: '1860' # Node Exporter Full by idealista
+#    revision_id: '13'
+#    datasource: '{{ grafana_datasources.0.name }}'
   - dashboard_id: '3662' # Prometheus 2.0 Overview by jeremy b
     revision_id: '2'
     datasource: '{{ grafana_datasources.0.name }}'
   - dashboard_id: '4202' # Named processes by host by Younes Ouadi
     revision_id: '1'
     datasource: '{{ grafana_datasources.0.name }}'
-  # - dashboard_id: '4271' # Docker and system monitoring by paulfantom
-  #   revision_id: '4'
-  #   datasource: '{{ grafana_datasources.0.name }}'
+  - dashboard_id: '4271' # Docker and system monitoring by paulfantom
+    revision_id: '4'
+    datasource: '{{ grafana_datasources.0.name }}'
+https://grafana.com/dashboards/6239
   - dashboard_id: '4701' # JVM (Micrometer) by mweirauch
     revision_id: '7'
     datasource: '{{ grafana_datasources.0.name }}'
@@ -249,6 +244,16 @@ grafana_dashboards:
   - dashboard_id: '6287' # Host Overview by ichasco
     revision_id: '2'
     datasource: '{{ grafana_datasources.0.name }}'
+  - dashboard_id: '6239' # Mysql - Prometheus by Juan Chimienti
+    revision_id: '1'
+    datasource: '{{ grafana_datasources.0.name }}'
+  - dashboard_id: '7362' # MySQL Overview by nasskach
+    revision_id: '5'
+    datasource: '{{ grafana_datasources.0.name }}'
+  - dashboard_id: '9623' # MySQL Overviewby willejs (from Percona GitHub repo)
+    revision_id: '4'
+    datasource: '{{ grafana_datasources.0.name }}'
+
 
 # grafana_dashboards_dir: "dashboards"
 

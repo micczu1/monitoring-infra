@@ -1,0 +1,11 @@
+[prometheus]
+demo
+localhost
+[grafana]
+demo
+
+#[web]
+#demo
+
+#[influxdb]
+#influx

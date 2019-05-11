@@ -2,12 +2,21 @@
 # defaults
 # mysqld_exporter_version: 0.11.0
 # mysqld_exporter_web_listen_address: "0.0.0.0:9104"
+mysqld_exporter_web_listen_address: "127.0.0.1:9104"
 
 # mysqld_exporter_dsn: "exporter:password@(localhost:3306)/"
-mysqld_exporter_dsn: "exporter:exporter@(localhost:3306)/"
 
 # mysqld_exporter_my_cnf: ""
 #mysqld_exporter_my_cnf: "/etc/.mysqld_exporter.cnf"
+
+## .my.cnf file template
+# [client]
+# user=exporter
+# password=<pass>
+
+## After creating file:
+# chown mysqld-exp /etc/.mysqld_exporter.cnf
+# chmod 0600 /etc/.mysqld_exporter.cnf
 
 mysqld_exporter_collect:
   - global_status
