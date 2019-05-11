@@ -234,7 +234,6 @@ grafana_dashboards:
   - dashboard_id: '4271' # Docker and system monitoring by paulfantom
     revision_id: '4'
     datasource: '{{ grafana_datasources.0.name }}'
-https://grafana.com/dashboards/6239
   - dashboard_id: '4701' # JVM (Micrometer) by mweirauch
     revision_id: '7'
     datasource: '{{ grafana_datasources.0.name }}'
