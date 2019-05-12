@@ -250,7 +250,12 @@ grafana_dashboards:
   - dashboard_id: '7362' # MySQL Overview by nasskach
     revision_id: '5'
     datasource: '{{ grafana_datasources.0.name }}'
-
+  - dashboard_id: '3894' # Apache by idealista
+    revision_id: '5'
+    datasource: '{{ grafana_datasources.0.name }}'
+  - dashboard_id: '2914' # Apache Traffic Server Dashboard by sarp
+    revision_id: '1'
+    datasource: '{{ grafana_datasources.0.name }}'
 
 # grafana_dashboards_dir: "dashboards"
 

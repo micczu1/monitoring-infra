@@ -36,6 +36,13 @@
   tags:
     - conntrack_exporter
 
+- name: Deploy apache_exporter
+  hosts: apache_exp
+  become: true
+  roles:
+    - apache_exporter
+  tags:
+    - apache_exporter
 
 - name: Setup core monitoring software
   hosts: prometheus

@@ -31,3 +31,6 @@ node_exporter_enabled_collectors:
 
 node_exporter_disabled_collectors:
   - zfs
+
+# More details:
+# --collector.netstat.fields=(.*) --collector.vmstat.fields=(.*)  --collector.interrupts
