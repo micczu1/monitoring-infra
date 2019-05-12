@@ -210,7 +210,6 @@ grafana_plugins:
   - vonage-status-panel
   - camptocamp-prometheus-alertmanager-datasource
   - grafana-piechart-panel
-#  - pmm-singlestat-panel
 
 # Dashboards from https://grafana.com/dashboards
 # grafana_dashboards: []
@@ -251,9 +250,6 @@ grafana_dashboards:
   - dashboard_id: '7362' # MySQL Overview by nasskach
     revision_id: '5'
     datasource: '{{ grafana_datasources.0.name }}'
-#  - dashboard_id: '9623' # MySQL Overviewby willejs (from Percona GitHub repo)
-#    revision_id: '4'
-#    datasource: '{{ grafana_datasources.0.name }}'
 
 
 # grafana_dashboards_dir: "dashboards"

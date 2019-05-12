@@ -1,14 +1,22 @@
+localhost node_exporter_web_listen_address="127.0.0.1:9100" process_exporter_web_listen_address="127.0.0.1:9256" mysqld_exporter_web_listen_address="127.0.0.1:9104"
+
+[node_exp]
+#localhost
+
+[proc_exp]
+#localhost
+
 [prometheus]
-localhost node_exporter_web_listen_address="127.0.0.1:9100" process_exporter_web_listen_address="127.0.0.1:9256"
+#localhost
 
 [grafana]
+localhost
+
+[mysql_exp]
 #localhost
 
-[mysql]
-localhost mysqld_exporter_web_listen_address="127.0.0.1:9104"
-
-[sql]
+[sql_exp]
 #localhost
 
-[conntrack]
+[conntrack_exp]
 

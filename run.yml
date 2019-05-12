@@ -1,19 +1,19 @@
 - name: Deploy node_exporter
-  hosts: all
+  hosts: node_exp
   roles:
     - cloudalchemy.node-exporter
   tags:
     - node_exporter
 
 - name: Deploy process-exporter
-  hosts: all
+  hosts: proc_exp
   roles:
     - micczu1.ansible_process_exporter
   tags:
     - process_exporter
 
 - name: Deploy mysqld_exporter
-  hosts: mysql
+  hosts: mysql_exp
   become: true
   roles:
     - cloudalchemy.mysqld_exporter
@@ -21,7 +21,7 @@
     - mysqld_exporter
 
 - name: Deploy sql_exporter
-  hosts: sql
+  hosts: sql_exp
   become: true
   roles:
     - micczu1.ansible_sql_exporter
@@ -29,7 +29,7 @@
     - sql_exporter
 
 - name: Deploy conntrack_exporter
-  hosts: conntrack
+  hosts: conntrack_exp
   become: true
   roles:
     - micczu1.ansible_conntrack_exporter
