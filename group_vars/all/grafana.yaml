@@ -43,8 +43,8 @@ grafana_provisioning_synced: true
 # Security
 grafana_security:
   admin_user: admin
-  admin_password: "Kubek"
-#  admin_password: "{{ vault_grafana_password }}"
+  admin_password: "admin"
+#  admin_password: "{{ vault_grafana_admin_password }}"
 #  secret_key: ""
 #  login_remember_days: 7
 #  cookie_username: grafana_user
