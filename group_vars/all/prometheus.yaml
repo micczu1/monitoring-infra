@@ -1,7 +1,7 @@
 ---
 # defaults
 # prometheus_version: 2.8.1
-
+ansible_host: localhost
 # prometheus_config_dir: /etc/prometheus
 # prometheus_db_dir: /var/lib/prometheus
 
@@ -83,29 +83,44 @@ prometheus_targets:
   node:
     - targets:
         "{{ groups['all'] | map('extract', hostvars, ['ansible_host']) | map('regex_replace', '$', ':9100') | list }}"
-      labels:
-        env: demo
-  alertmanager:
+  proc-exp:
     - targets:
-      - "{{ ansible_host }}:9093"
-      labels:
-        env: demo
-  grafana:
+        "{{ groups['all'] | map('extract', hostvars, ['ansible_host']) | map('regex_replace', '$', ':9256') | list }}"
+  mysqld-exp:
     - targets:
-      - "{{ ansible_host }}:3000"
-      labels:
-        env: demo
+        "{{ groups['all'] | map('extract', hostvars, ['ansible_host']) | map('regex_replace', '$', ':9104') | list }}"
 
-# prometheus_scrape_configs:
-#   - job_name: "prometheus"
-#     metrics_path: "{{ prometheus_metrics_path }}"
-#     static_configs:
-#       - targets:
-#           - "{{ ansible_fqdn | default(ansible_host) | default('localhost') }}:9090"
-#   - job_name: "node"
-#     file_sd_configs:
-#       - files:
-#           - "{{ prometheus_config_dir }}/file_sd/node.yml"
+#      labels:
+#        env: demo
+#  alertmanager:
+#    - targets:
+#      - "{{ ansible_host }}:9093"
+#      labels:
+#        env: demo
+#  grafana:
+#    - targets:
+#      - "{{ ansible_host }}:3000"
+#      labels:
+#        env: demo
+
+prometheus_scrape_configs:
+   - job_name: "prometheus"
+     metrics_path: "{{ prometheus_metrics_path }}"
+     static_configs:
+       - targets:
+           - "{{ ansible_fqdn | default(ansible_host) | default('localhost') }}:9090"
+   - job_name: "node"
+     file_sd_configs:
+       - files:
+           - "{{ prometheus_config_dir }}/file_sd/node.yml"
+   - job_name: "proc-exp"
+     file_sd_configs:
+       - files:
+           - "{{ prometheus_config_dir }}/file_sd/proc-exp.yml"
+   - job_name: "mysqld-exp"
+     file_sd_configs:
+       - files:
+           - "{{ prometheus_config_dir }}/file_sd/mysqld-exp.yml"
 
 # Alternative config file name, searched in ansible templates path.
 # prometheus_config_file: 'prometheus.yml.j2'
