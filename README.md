@@ -51,14 +51,6 @@ You need to specify both even if you don't use grafana nor influxdb. You can loo
 # Download roles
 ansible-galaxy install -r roles/requirements.yml
 
-cd roles
-git clone https://github.com/micczu1/stunnel.git
-git clone https://github.com/micczu1/process-exporter.git
-git clone https://github.com/micczu1/bash-exporter.git
-git clone https://github.com/micczu1/sql_exporter1.git
-git clone https://github.com/micczu1/conntrack_exporter.git
-cd ..
-
 # Run playbook
 ansible-playbook site.yml
 # or when using vault encrypted variables
