@@ -1,6 +1,6 @@
 # Monitoring infra
 
-Playbook [site.yml](site.yml) deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports.
+Playbook [run.yml](run.yml) deploys basic prometheus/grafana stack without additional http proxies and with software listening on default ports.
 
 ## What is what
 
@@ -25,14 +25,7 @@ You can easily run such setup yourself without much knowledge how any part of th
 
 #### Change ansible inventory
 
-First of all you need to configure your inventory, ours is located in [`hosts`](hosts) file. Here you set up your target hosts by changing value of `ansible_host` variable. Also, here you can exclude parts of this demo site, so if you don't need our website, you just remove this part:
-
-```
-[web]
-demo
-```
-
-Accordingly, you can exclude grafana, prometheus, or influxdb.
+First of all you need to configure inventory located in [`hosts`](hosts) file. Here you set up your target hosts by changing value of `ansible_host` variable.
 
 #### Change passwords
 
@@ -78,6 +71,3 @@ https://github.com/cloudalchemy/demo-site
 
 - [ ] (optional) Put passwords/generated certificates and keys in Ansible Vault
 - [ ] (optional) Secure exporters (TLS encryption + simple auth)
-- [ ] Sort out the _"missing jmespath on deployer"_ problem (it appears in Prometheus and Grafana roles; workaround is to comment out few minor auto-configuration tasks) - chance it disappears when running live, instead on Vagrant
-- [ ] Better auto-configuration of Prometheus
-- [ ] Better auto-configuration of Grafana
