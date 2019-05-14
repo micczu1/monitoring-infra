@@ -36,13 +36,41 @@
   tags:
     - conntrack_exporter
 
-- name: Deploy apache_exporter
-  hosts: apache_exp
-  become: true
+# - name: Deploy apache_exporter
+#   hosts: apache_exp
+#   become: true
+#   roles:
+#     - apache_exporter
+#   tags:
+#     - apache_exporter
+
+# - name: Deploy jmx-exporter (exporting Java metrics)
+#   hosts: all
+#   roles:
+#     - jmx-exporter
+#   tags:
+#     - jmx_exporter
+
+# - name: Deploy zookeeper-exporter
+#   hosts: all
+#   roles:
+#     - zookeeper-exporter
+#   tags:
+#     - zookeeper_exporter
+
+- name: Deploy collectd agent
+  hosts: collectd
   roles:
-    - apache_exporter
+    - collectd
   tags:
-    - apache_exporter
+    - collectd
+
+- name: Deploy graphite
+  hosts: graphite
+  roles:
+    - graphite
+  tags:
+    - graphite
 
 - name: Setup core monitoring software
   hosts: prometheus

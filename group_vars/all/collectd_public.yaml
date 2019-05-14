@@ -1,0 +1,16 @@
+---
+
+collectd_graphite_config: |
+    <Plugin write_graphite>
+        <Node "graphite-dev">
+            Host "148.251.5.91"
+            Port "7999"
+            Protocol "tcp"
+            LogSendErrors true
+            Prefix "ci."
+            StoreRates true
+            SeparateInstances true
+            AlwaysAppendDS false
+            EscapeCharacter "."
+        </Node>
+    </Plugin>
